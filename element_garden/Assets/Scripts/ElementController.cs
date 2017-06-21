@@ -20,27 +20,27 @@ public class ElementController : MonoBehaviour
     void Update ()
     {
         if (Input.GetKey("w"))
-        {
-            water.Holding();
+        {            
             air.NotHolding();
             sun.NotHolding();
-            dirt.NotHolding();
+            dirt.NotHolding();    
+            water.Holding();
             return;
         }
         else if (Input.GetKey("a"))
         {
             water.NotHolding();
-            air.Holding();
             sun.NotHolding();
             dirt.NotHolding();
+            air.Holding();
             return;
         }
         else if (Input.GetKey("s"))
         {
             water.NotHolding();
             air.NotHolding();
-            sun.Holding();
             dirt.NotHolding();
+            sun.Holding();
             return;
         }
         else if (Input.GetKey("d"))
