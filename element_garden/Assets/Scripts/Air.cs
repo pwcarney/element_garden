@@ -4,4 +4,8 @@ using UnityEngine;
 
 public class Air : Element {
 
+    protected override void Execute(Vector3 inputPos)
+    {
+        // NO-OP
+    }
 }
