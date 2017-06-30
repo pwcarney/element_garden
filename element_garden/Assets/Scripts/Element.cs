@@ -13,14 +13,14 @@ public abstract class Element : MonoBehaviour
 
     bool isHeld = false;
 
-    void Start()
+    protected void Start()
     {
         button_image = button.GetComponent<Image>();
 
         cam = Camera.main;
     }
 
-    void FixedUpdate()
+    protected void FixedUpdate()
     {
         // Change button color
         if (isHeld)
@@ -28,17 +28,16 @@ public abstract class Element : MonoBehaviour
         else
             button_image.color = Color.white;
 
-        // Execute functionality
+        // Execute element functionality
         if (Input.GetMouseButton(0) && isHeld)
         {
-            //create a ray cast and set it to the mouses cursor position in game
+            // Create a ray cast and set it to the mouses cursor position in game
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit, 50f))
             {
                 //draw invisible ray cast/vector
                 Debug.DrawLine(ray.origin, hit.point);
-                Debug.Log(hit.point);
                 Execute(hit.point);
             }
         }

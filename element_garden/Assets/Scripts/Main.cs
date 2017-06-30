@@ -12,7 +12,6 @@ public class Main : MonoBehaviour
 
 	void Start () 
 	{
-        /*
         land_size = land_plot_prefab.GetComponent<Renderer>().bounds.size;
 
         for (double ii = -grid_size / 2.0; ii < grid_size / 2.0; ii += land_size.x + buffer)
@@ -22,6 +21,6 @@ public class Main : MonoBehaviour
                 Vector3 location = new Vector3((float)ii + buffer, (float)0.0, (float)jj + buffer);
                 Instantiate(land_plot_prefab, location, Quaternion.identity);
             }
-        }*/
+        }
 	}
 }
