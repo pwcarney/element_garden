@@ -10,6 +10,8 @@ public class Seed : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Raindrop")
-            water_level++;
+        {
+            Debug.Log(water_level++);
+        }
     }
 }
