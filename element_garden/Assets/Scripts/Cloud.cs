@@ -16,10 +16,10 @@ public class Cloud : MonoBehaviour {
             next_drop = Time.timeSinceLevelLoad + rain_delay;
 
             Vector3 cloud_pos = transform.position;
-            float x_offset = Random.Range(-0.3f, 0.3f);
-            float z_offset = Random.Range(-0.3f, 0.3f);
+            float x_offset = Random.Range(-0.7f, 0.7f);
+            float z_offset = Random.Range(-0.2f, 0.2f);
             cloud_pos.x += x_offset;
-            cloud_pos.y -= 0.5f;
+            cloud_pos.y -= 0.7f;
             cloud_pos.z += z_offset;
 
             Instantiate(raindrop, cloud_pos, Quaternion.identity);
