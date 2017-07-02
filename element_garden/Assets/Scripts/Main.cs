@@ -19,7 +19,7 @@ public class Main : MonoBehaviour
             for (double jj = -grid_size / 2.0; jj < grid_size / 2.0; jj += land_size.z + buffer)
             {
                 Vector3 location = new Vector3((float)ii + buffer, (float)0.0, (float)jj + buffer);
-                Instantiate(land_plot_prefab, location, Quaternion.identity);
+                Instantiate(land_plot_prefab, location, land_plot_prefab.transform.rotation);
             }
         }
 	}
