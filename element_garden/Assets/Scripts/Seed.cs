@@ -5,13 +5,19 @@ using UnityEngine;
 public class Seed : MonoBehaviour {
 
     int water_level = 0;
+    int sun_level = 0;
 
-    // Use this for initialization
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
+        Debug.Log(other.tag);
         if (other.tag == "Raindrop")
         {
-            Debug.Log(water_level++);
+            water_level++;
+            Destroy(other.gameObject);
+        }
+        else if (other.tag == "Sunbeam")
+        {
+            sun_level++;
         }
     }
 }
