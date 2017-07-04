@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Main : MonoBehaviour
+public class Setup : MonoBehaviour
 {
     public int grid_size;
     public float buffer;
@@ -14,11 +14,14 @@ public class Main : MonoBehaviour
 	{
         land_size = land_plot_prefab.GetComponent<Renderer>().bounds.size;
 
-        for (double ii = -grid_size / 2.0; ii < grid_size / 2.0; ii += land_size.x + buffer)
+        float land_x = land_size.x + buffer;
+        float land_z = land_size.z + buffer;
+
+        for (float ii = -grid_size * land_x / 4f; ii < grid_size * land_x  / 4f; ii += land_size.x)
         {
-            for (double jj = -grid_size / 2.0; jj < grid_size / 2.0; jj += land_size.z + buffer)
+            for (float jj = -grid_size * land_z / 4f; jj < grid_size * land_z / 4f; jj += land_size.z)
             {
-                Vector3 location = new Vector3((float)ii + buffer, (float)0.0, (float)jj + buffer);
+                Vector3 location = new Vector3(ii + buffer, 0f, jj + buffer);
                 Instantiate(land_plot_prefab, location, land_plot_prefab.transform.rotation);
             }
         }
